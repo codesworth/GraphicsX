@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		38C818AB223C6EEC00150FD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38C818AA223C6EEC00150FD4 /* main.cpp */; };
+		38C818B3223C70D800150FD4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C818B2223C70D800150FD4 /* OpenGL.framework */; };
+		38C818B5223C70FE00150FD4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C818B4223C70FE00150FD4 /* CoreFoundation.framework */; };
+		38C818B7223C718B00150FD4 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C818B6223C718B00150FD4 /* libGLEW.2.1.0.dylib */; };
+		38C818B9223C71B500150FD4 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C818B8223C71B500150FD4 /* libglfw.3.2.dylib */; };
+		38C818BB223C71DD00150FD4 /* libsoil2-debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C818BA223C71DD00150FD4 /* libsoil2-debug.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		38C818A7223C6EEC00150FD4 /* Hyllyce */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hyllyce; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C818AA223C6EEC00150FD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		38C818B2223C70D800150FD4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		38C818B4223C70FE00150FD4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		38C818B6223C718B00150FD4 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		38C818B8223C71B500150FD4 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		38C818BA223C71DD00150FD4 /* libsoil2-debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsoil2-debug.a"; path = "../SOIL2_Debug/libsoil2-debug.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C818BB223C71DD00150FD4 /* libsoil2-debug.a in Frameworks */,
+				38C818B9223C71B500150FD4 /* libglfw.3.2.dylib in Frameworks */,
+				38C818B7223C718B00150FD4 /* libGLEW.2.1.0.dylib in Frameworks */,
+				38C818B5223C70FE00150FD4 /* CoreFoundation.framework in Frameworks */,
+				38C818B3223C70D800150FD4 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +58,7 @@
 			children = (
 				38C818A9223C6EEC00150FD4 /* Hyllyce */,
 				38C818A8223C6EEC00150FD4 /* Products */,
+				38C818B1223C70D800150FD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +76,18 @@
 				38C818AA223C6EEC00150FD4 /* main.cpp */,
 			);
 			path = Hyllyce;
+			sourceTree = "<group>";
+		};
+		38C818B1223C70D800150FD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38C818BA223C71DD00150FD4 /* libsoil2-debug.a */,
+				38C818B8223C71B500150FD4 /* libglfw.3.2.dylib */,
+				38C818B6223C718B00150FD4 /* libGLEW.2.1.0.dylib */,
+				38C818B4223C70FE00150FD4 /* CoreFoundation.framework */,
+				38C818B2223C70D800150FD4 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +269,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/codesworth/Development/Graphics/SOIL2_Debug/,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Debug;
 		};
@@ -250,7 +284,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/codesworth/Development/Graphics/SOIL2_Debug/,
+					/usr/local/Cellar/glew/2.1.0/lib,
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Release;
 		};
